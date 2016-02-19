@@ -58,11 +58,49 @@ h1 {
 	cursor: pointer;
 	border: solid 1px #222;
 }
+/*ジャンケンボタン*/
+#gu-botan {
+	position: absolute;
+	top: 616px;
+	left: 62px;
+	width: 35px;
+	height: 35px;
+	margin: 5px;
+	border-radius: 20px;
+	background-color: #FF0000;
+	cursor: pointer;
+}
+
+#tyokibotan {
+	position: absolute;
+	top: 616px;
+	left: 148px;
+	width: 35px;
+	height: 35px;
+	margin: 5px;
+	border-radius: 20px;
+	background-color: #FFFF00;
+	cursor: pointer;
+}
+
+#pa-botan {
+	position: absolute;
+	top: 616px;
+	left: 232px;
+	width: 36px;
+	height: 36px;
+	margin: 5px;
+	border-radius: 20px;
+	background-color: #00008B;
+	cursor: pointer;
+}
+
+
 /*画像の位置*/
 #roulette1 {
 	position: absolute;
-	top: 40px;
-	left: 65px;
+	top: -105px;
+	left: -90px;
 }
 
 #roulette2 {
@@ -76,7 +114,81 @@ h1 {
 	top: 160px;
 	left: 190px;
 }
+#anemy1 img:nth-child(n+2) { 
+	display:none;
+}
 
+#kaiten {
+	position:absolute;
+	top:22px;
+	left:203px;
+}
+#kaiten1 {
+	position:absolute;
+	top:45px;
+	left:280px;
+	transform: rotate(30deg);
+}
+#kaiten2 {
+	position:absolute;
+	top:100px;
+	left:340px;
+	transform: rotate(60deg);
+}
+#kaiten3 {
+	position:absolute;
+	top:182px;
+	left:360px;
+	transform: rotate(90deg);
+}
+#kaiten4 {
+	position:absolute;
+	top:260px;
+	left:340px;
+	transform: rotate(120deg);
+}
+#kaiten5 {
+	position:absolute;
+	top:318px;
+	left:280px;
+	transform: rotate(150deg);
+}
+#kaiten6 {
+	position:absolute;
+	top:338px;
+	left:203px;
+	transform: rotate(180deg);
+}
+#kaiten7 {
+	position:absolute;
+	top:318px;
+	left:122px;
+	transform: rotate(210deg);
+}
+#kaiten8 {
+	position:absolute;
+	top:260px;
+	left:67px;
+	transform: rotate(240deg);
+}
+#kaiten9 {
+	position:absolute;
+	top:181px;
+	left:43px;
+	transform: rotate(270deg);
+}
+#kaiten10 {
+	position:absolute;
+	top:101px;
+	left:64px;
+	transform: rotate(300deg);
+}
+#kaiten11 {
+	position:absolute;
+	top:45px;
+	left:124px;
+	transform: rotate(330deg);
+}
 /*勝敗表示部分*/
 #result {
 	position: absolute;
@@ -169,8 +281,8 @@ h1 {
 }
 #runum2 {
 	position: absolute;
-	top: 100px;
-	left: 360px;
+	top: 90px;
+	left: 350px;
 	color: #FF0000;
 	font-size: 32px;
 	transform: rotate( 30deg );
@@ -178,15 +290,15 @@ h1 {
 #runum3 {
 	color: #FFFFFF;
 	position: absolute;
-	top: 160px;
-	left: 415px;
+	top: 150px;
+	left: 410px;
 	font-size: 32px;
 	transform: rotate( 60deg );
 }
 #runum4 {
 	color: #FF0000;
 	position: absolute;
-	top: 240px;
+	top: 235px;
 	left: 425px;
 	font-size: 32px;
 	transform: rotate( 90deg );
@@ -211,7 +323,7 @@ h1 {
 	color: #FFFFFF;
 	position: absolute;
 	top: 390px;
-	left: 270px;
+	left: 265px;
 	font-size: 32px;
 	transform: rotate( 180deg );
 }
@@ -251,7 +363,7 @@ h1 {
 	color: #FF0000;
 	position: absolute;
 	top: 95px;
-	left: 190px;
+	left: 185px;
 	font-size: 32px;
 	transform: rotate( 330deg );
 }

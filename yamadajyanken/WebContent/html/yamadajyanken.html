@@ -4,18 +4,34 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>ジャンケンマンフィーバー</title>
 		<link href="yamadajyanken.css" rel="stylesheet" type="text/css" />
-
 	</head>
 	<body>
+		
 		<div id="zenntai">
 			<h1>ジャンケンマンフィーバー</h1>
 
-			<div id="roulette1"><img src="jyannkennsozai1.png" id="rouletteg1">
+			<div id="roulette1"><img src="roulette3.png" id="rouletteg1">
 			</div>
 			<div id="roulette2"><img src="jyannkennsozai2.png" id="rouletteg2">
 			</div>
-			<div id="anemy1"><img src="gu-.png" id="anemyImg1" >
+			<div id="anemy1">
+				<img src="gu-.png" id="anemyImg1" alt="img01">
+				<img src="tyoki.png" id="anemyImg2" alt="img02">
+				<img src="pa-.png" id="anemyImg3" alt="img03">
 			</div>
+			
+   				<img src="kaiten.png" id="kaiten" style="position:absolute;top:22px;left:203px;">
+   				<img src="kaiten.png" id="kaiten1">
+   				<img src="kaiten.png" id="kaiten2">
+   				<img src="kaiten.png" id="kaiten3">
+   				<img src="kaiten.png" id="kaiten4">
+   				<img src="kaiten.png" id="kaiten5">
+   				<img src="kaiten.png" id="kaiten6">
+   				<img src="kaiten.png" id="kaiten7">
+   				<img src="kaiten.png" id="kaiten8">
+   				<img src="kaiten.png" id="kaiten9">
+   				<img src="kaiten.png" id="kaiten10">
+   				<img src="kaiten.png" id="kaiten11">
 
 			<div id="x1num">
 				<span id="runum1">4</span>
@@ -46,7 +62,7 @@
 				<span id="runum11">2</span>
 				<span id="runum12">0</span>
 			</div>
-
+			
 			<div id="x3num">
 				<span id="runum1">12</span>
 				<span id="runum2">4</span>
@@ -61,7 +77,7 @@
 				<span id="runum11">3</span>
 				<span id="runum12">0</span>
 			</div>
-
+		
 			<div id="pgu-">
 				グー
 			</div>
@@ -89,6 +105,9 @@
 			<div id="betlump1"></div>
 			<div id="betlump2"></div>
 			<div id="betlump3"></div>
+			<div id="gu-botan" input type="button" onclick="choose(0)" /></div>
+			<div id="tyokibotan" input type="button" onclick="choose(1)" /></div>
+			<div id="pa-botan" input type="button" onclick="choose(2)" /></div>
 
 			<div id="bet1">
 				BET1
@@ -100,7 +119,8 @@
 				BET3
 			</div>
 
-			<script src="jquery-1.11.1.min.js" type="text/javascript"></script>
+			
 			<script src="yamadajyanken.js"></script>
+			
 	</body>
 </html>
