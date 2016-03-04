@@ -9,60 +9,9 @@ document.getElementById("betlump1").style.display = "none";
 document.getElementById("betlump2").style.display = "none";
 document.getElementById("betlump3").style.display = "none";
 
-var kflg0 = false;
-var kflg1 = false;
-var kflg2 = false;
-var kflg3 = false;
-var kflg4 = false;
-var kflg5 = false;
-var kflg6 = false;
-var kflg7 = false;
-var kflg8 = false;
-var kflg9 = false;
-var kflg10 = false;
-var kflg11 = false;
-
-window.onload = function() {
-	if (kflg0 == false){
-		document.getElementById("kaiten").style.display = "none";
-	}
-	if (kflg1 == false){
-		document.getElementById("kaiten1").style.display = "none";
-	}
-	if (kflg2 == false){
-		document.getElementById("kaiten2").style.display = "none";
-	}
-	if (kflg3 == false){
-		document.getElementById("kaiten3").style.display = "none";
-	}
-	if (kflg4 == false){
-		document.getElementById("kaiten4").style.display = "none";
-	}
-	if (kflg5 == false){
-		document.getElementById("kaiten5").style.display = "none";
-	}
-	if (kflg6 == false){
-		document.getElementById("kaiten6").style.display = "none";
-	}
-	if (kflg7 == false){
-		document.getElementById("kaiten7").style.display = "none";
-	}
-	if (kflg8 == false){
-		document.getElementById("kaiten8").style.display = "none";
-	}
-	if (kflg9 == false){
-		document.getElementById("kaiten9").style.display = "none";
-	}
-	if (kflg10 == false){
-		document.getElementById("kaiten10").style.display = "none";
-	}
-	if (kflg11 == false){
-		document.getElementById("kaiten11").style.display = "none";
-	}
-}
-
 var kakenum = 0;
 var kakekin = 0;
+var mflg = 0;
 
 hand = new Array("gu-.png","tyoki.png","pa-.png");
 
@@ -91,6 +40,7 @@ medalEnter.onclick = function() {
 	number.innerHTML -= 1;
 	kakenum++;
 	kakekin++;
+	mflg++;
 
 	if (kakenum == 1) {
 		document.getElementById("betlump1").style.display = "block";
@@ -126,14 +76,57 @@ function choose(btn) {
 		result.innerHTML = "勝ち";
 		anemyh = null;
 		btn = null;
+		//rukaiten();
+		
+		var winList = document.getElementById("feverList");
+		var child = winList.getElementsByTagName("li");
+		var childNum = child.length;
+		var timer = null;
+		clearTimeout(jankenman);
+		var selected = 0;
+		kakekin = 0;
 		kakenum = 0;
-		rukaiten();
+
+		function loopstart() {
+			var timer = setInterval(function() {
+				selected++;
+				if (selected > childNum - 1) {
+					selected = 0;
+				}
+				var listID = document.getElementById("list" + (selected));
+				var listPlus = document.getElementById("list" + (selected + 1));
+				listID.className = "";
+				listPlus.className = "activeMedal";
+			}, 50);
+			var randomNum = Math.floor(Math.random() * 4000 + 3000);
+			setTimeout(function() {
+				clearInterval(timer);
+				var getMedal = document.getElementsByClassName("activeMedal")[0].innerHTML;
+				getMedal = parseInt(getMedal, 10);
+				var presentMedal = parseInt(number.innerHTML, 10);
+				if (mflg == 1){
+				number.innerHTML = (presentMedal + getMedal);
+				}
+				if (mflg == 2){
+					number.innerHTML = (presentMedal + getMedal*2 );
+				}
+				if (mflg == 3){
+					number.innerHTML = (presentMedal + getMedal*3 );
+				}
+				mflg = 0;
+			}, randomNum);
+		};//end loopstart();
+		setTimeout(function() {
+			loopstart();
+		}, 100);
 	}
 	if (btn == 0 && anemyh == 2 || btn == 1 && anemyh == 0 || btn == 2 && anemyh == 1) {
 		result.innerHTML = "負け";
 		anemyh = null;
 		btn = null;
 		kakenum = 0;
+		mflg = 0;
+		clearTimeout(jankenman);
 	}
 }
 
@@ -158,85 +151,4 @@ function jankenman() {
 　		}
 	}
 
-}
-
-function rukaiten() {
-	
-	if (kflg0 == false) {
-		document.getElementById("kaiten").style.display = "block";
-		kflg0 == true;
-	}
-	
-	if (kflg0 == true) {
-		document.getElementById("kaiten1").style.display = "block";
-		document.getElementById("kaiten").style.display = "none";
-		kflg1 = true;
-		kflg0 = false;
-	}
-	if (kflg1 == true) {
-		document.getElementById("kaiten2").style.display = "block";
-		document.getElementById("kaiten1").style.display = "none";
-		kflg2 = true;
-		kflg1 = false;
-	}
-	if (kflg2 == true) {
-		document.getElementById("kaiten3").style.display = "block";
-		document.getElementById("kaiten2").style.display = "none";
-		kflg3 = true;
-		kflg2 = false;
-	}
-	if (kflg3 == true) {
-		document.getElementById("kaiten4").style.display = "block";
-		document.getElementById("kaiten3").style.display = "none";
-		kflg4 = true;
-		kflg3 = false;
-	}
-	if (kflg4 == true) {
-		document.getElementById("kaiten5").style.display = "block";
-		document.getElementById("kaiten4").style.display = "none";
-		kflg5 = true;
-		kflg4 = false;
-	}
-	if (kflg5 == true) {
-		document.getElementById("kaiten6").style.display = "block";
-		document.getElementById("kaiten5").style.display = "none";
-		kflg6 = true;
-		kflg5 = false;
-	}
-	if (kflg6 == true) {
-		document.getElementById("kaiten7").style.display = "block";
-		document.getElementById("kaiten6").style.display = "none";
-		kflg7 = true;
-		kflg6 = false;
-	}
-	if (kflg7 == true) {
-		document.getElementById("kaiten8").style.display = "block";
-		document.getElementById("kaiten7").style.display = "none";
-		kflg8 = true;
-		kflg7= false;
-	}
-	if (kflg8 == true) {
-		document.getElementById("kaiten9").style.display = "block";
-		document.getElementById("kaiten8").style.display = "none";
-		kflg9 = true;
-		kflg8 = false;
-	}
-	if (kflg9 == true) {
-		document.getElementById("kaiten10").style.display = "block";
-		document.getElementById("kaiten9").style.display = "none";
-		kflg10 = true;
-		kflg9 = false;
-	}
-	if (kflg10 == true) {
-		document.getElementById("kaiten11").style.display = "block";
-		document.getElementById("kaiten10").style.display = "none";
-		kflg11 = true;
-		kflg10 = false;
-	}
-	if (kflg11 == true) {
-		document.getElementById("kaiten").style.display = "block";
-		document.getElementById("kaiten11").style.display = "none";
-		kflg0 = true;
-		kflg11 = false;
-	}
 }
