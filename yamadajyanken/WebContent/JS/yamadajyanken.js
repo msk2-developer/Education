@@ -13,7 +13,7 @@ var kakenum = 0;
 var kakekin = 0;
 var mflg = 0;
 
-hand = new Array("gu-.png","tyoki.png","pa-.png");
+var hand = new Array("../image/gu-.png","../image/tyoki.png","../image/pa-.png");
 
 
 medalEnter.onclick = function() {
@@ -76,7 +76,6 @@ function choose(btn) {
 		result.innerHTML = "勝ち";
 		anemyh = null;
 		btn = null;
-		//rukaiten();
 		
 		var winList = document.getElementById("feverList");
 		var child = winList.getElementsByTagName("li");
@@ -95,6 +94,9 @@ function choose(btn) {
 				}
 				var listID = document.getElementById("list" + (selected));
 				var listPlus = document.getElementById("list" + (selected + 1));
+				if (selected == 11) {
+					var listPlus = document.getElementById("list0");
+				}
 				listID.className = "";
 				listPlus.className = "activeMedal";
 			}, 50);
